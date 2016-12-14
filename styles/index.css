@@ -1,0 +1,44 @@
+body{
+	min-width: 620px;
+	max-width: 960px;
+	margin: auto;
+	font-family: "Andale Mono", "Courier New", Courier, monospace;
+	line-height: 140%;
+}
+
+#links {
+	margin: auto;
+	margin-top: 200px;
+	font-family: "Lobster", helvetica, arial, sans-serif;
+	font-size: 60pt;
+	text-align: center;
+}
+
+a{
+	color: #000000;
+	text-decoration: none;
+}
+
+#links {
+	margin-bottom: 65px;
+}
+
+#links a{
+	display: inline-block;
+	transition: margin .5s;
+	-webkit-transition: margin .5s; /* Safari */
+}
+
+#links a:hover{
+	margin: 0px 30px;
+}
+
+#description{
+	width: 600px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+#description a{
+	text-decoration: underline;
+}

@@ -1,0 +1,410 @@
+/* CSS Document */
+
+body {
+	padding: 0;
+	margin: 0;
+	text-align:center;
+	font-family: "Andale Mono", "Courier New", Courier, monospace;
+	line-height: 140%;
+	font-size: 12pt;
+}
+
+.content{
+	width: 960px;
+	margin: auto;
+	padding-bottom: 40px;
+	font-family: "Andale Mono", "Courier New", Courier, monospace;
+	padding-top: 40px;
+	font-size: 12pt;
+}
+
+#navbar .content{
+	padding-top: 0;
+}
+
+/*only shows up on play page*/
+.navbar-insert {
+
+	display: none;
+	width: 520px;
+}
+
+.content a {
+	color: #000000;
+}
+
+#navbar {
+	user-select: none;
+	width: 100%;
+	height: 50px;
+	color: #fff;
+	border-bottom: 3px solid #000;
+	font-size: 14pt;
+	background-color: #000000;
+}
+
+#navbar a {
+	color: #fff;
+	font-family: "Lobster", helvetica, arial, sans-serif;
+	font-size: 14pt;
+	text-decoration: none;
+}
+
+/*title*/
+#navbar h1 {
+	float: left;
+	font-size: 18pt;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+/*beta title*/
+#navbar span{
+	font-family: "Andale Mono", "Courier New", Courier, monospace;
+	font-size: 10pt;
+}
+
+#navbar span a{
+	font-family: "Andale Mono", "Courier New", Courier, monospace;
+	font-size: 12pt;
+	float: left;
+	margin-left: 20px;
+	margin-top: 19px;
+}
+
+#navbar h1 span{
+	font-size: 10pt;
+}
+
+#navbar .content a:hover{
+	text-decoration: underline;
+}
+
+/*play and make links container on navbar*/
+#navbar .content div#links{
+	float: right;
+	padding-right: 25px;
+	margin-top: 16px;
+}
+
+/*page name*/
+.content h2{
+	font-family: "Lobster", helvetica, arial, sans-serif;
+	font-size: 24pt;
+	text-align: right;
+}
+
+.content p {
+	text-align: left;
+	width: 80%;
+	margin: auto;
+}
+
+#notifications {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 9;
+}
+
+
+#notifications .message {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 6px 20px;
+	max-height: 200px;
+	width: 100%;
+	overflow: auto;
+	white-space: pre-line;
+}
+
+#notifications .notification {
+	color: #fff;
+	font-weight: 700;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+	border-radius: 2px;
+	margin: 1px auto;
+	width: 550px;
+	max-width: 100%;
+	position: relative;
+	transition: all .25s ease-in-out;
+	opacity: 0;
+}
+.notification > .close-notification {
+	outline: none;
+	padding: 7px;
+	top: 0;
+	right: 5px;
+	position: absolute;
+}
+
+.notification > .close-notification::before {
+	font-size: 15px !important;
+	font-weight: 400;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	text-decoration: inherit;
+	speak: none;
+	display: inline-block;
+	visibility: visible;
+	content: "x";
+	text-decoration: none;
+}
+
+
+#notifications .error {
+	opacity: 1;
+	background-color: hsla(8, 100%, 50%, 0.9);
+}
+
+#notifications .warning {
+	opacity: 1;
+	background-color: hsla(36, 100%, 38%, .9);
+}
+
+#notifications .success {
+	opacity: 1;
+	background-color: hsla(92, 62%, 50%, .9);
+}
+
+.notification > .close {
+	padding: 7px;
+	top: 0;
+	right: 5px;
+	position: absolute;
+}
+
+.notification a {
+  color: white;
+}
+
+/* Editable maze key*/
+.maze-key {
+	list-style-type: none;
+	width: 200px;
+	padding-left: 0;
+	margin: 25px auto 10px auto;
+}
+
+.maze-key div {
+	width: 55px;
+	margin: 0;
+	display: inline-block;
+}
+
+.maze-key div span {
+	margin: auto;
+}
+
+.maze-key div img{
+	width: 30px;
+	height: 30px;
+	margin: auto;
+}
+
+/*div container for editable 2D maze*/
+div.maze-container{
+	position: relative;
+	margin: auto;
+	width: 800px;
+}
+
+
+div.error-box ul{
+	pointer-events: none;
+	background: #ffffff;
+	color: #ff0000;
+	border: 2px solid #ff0000;
+	padding: 10px;
+	position: absolute;
+	z-index: 2;
+	top: 350px;
+	left: 260px;
+	list-style-type: none;
+	display: inline-block;
+}
+
+div.error-box ul li{
+	text-align: center;
+}
+
+#container.canvas {
+	cursor: pointer;
+}
+
+/*save button*/
+.button, button{
+	margin: 20px;
+	font-family: "Andale Mono", "Courier New", Courier, monospace;
+	background-color: #ffffff;
+	padding: 5px 10px;
+	font-size: 14pt;
+	border: 1px solid #000000;
+	border-radius: 2px;
+	-webkit-transition: background-color .18s, color .18s; 
+    -moz-transition: background-color .18s, color .18s;  
+    -o-transition: background-color .18s, color .18s;  
+    transition: background-color .18s, color .18s;
+}
+
+.button:hover, .button:focus, button:hover, button:focus, button:hover, button:focus {
+	background-color: #000000;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+/*fileMazeSolver upload*/
+form.file-upload{
+	display: block;
+	padding-top: 30px;
+	width: 350px;
+	margin: auto;
+}
+
+div.file-upload-input-container{
+	padding: 5px 0;
+}
+
+form.file-upload label{
+	float: left;
+	display: block;
+}
+
+form.file-upload input.button{
+	margin-top: 35px;
+}
+
+/*color picker*/
+#colorpicker{
+	position: absolute;
+	z-index: 2;
+}
+
+/*sketcher*/
+
+.sketch-container{
+	position: relative;
+}
+
+.sketch-container div.loading{
+	position: absolute;
+	top: 240px;
+	left: 400px;
+	background-color: #000000;
+	border-radius: 2px;
+	padding: 0 10px;
+}
+
+#sketcher{
+	position: relative;
+}
+
+#sketch{
+  border: 2px solid #000000; 
+  background-color: #EEEEEE;
+  border-radius: 0;
+}
+
+#color_swatch, #tool_button {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  background-size: 100%;
+  border: 1px solid #888888;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#draw_size {
+	position: absolute;
+	width: 100px;
+	right: 0;
+	bottom: 5px;
+	cursor: e-resize;
+}
+
+#logo {
+	float: left;
+}
+#logo>img {
+	width: 40px;
+	margin-top: 5px;
+}
+
+ul.tools{
+	padding: 20px 0 0 0;
+	padding-bottom: 2px;
+	margin: auto;
+	width: 80%;
+	position: relative;
+}
+
+.drag_button {
+  background-image: url("../images/sketcher/hand_icon.png");
+}
+
+.draw_button {
+  background-image: url("../images/sketcher/marker_icon.png");
+}
+
+.grab {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+
+.grabbing { 
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing; 
+}
+
+.drawing {
+	cursor: url('../images/sketcher/marker_cursor.png') 0 30, default;
+}
+
+/* Upload notifications and instructions */
+.instructions {
+	text-align: center!important;
+	opacity: 0;
+	-webkit-transition: opacity 1s,  color 1s;  
+    -moz-transition: opacity 1s,  color 1s;  
+    -o-transition: opacity 1s,  color 1s;  
+    transition: opacity 1s,  color 1s;
+}
+
+.instructions-show{
+	opacity: 1;
+}
+
+.file-upload-notification {
+	margin-top: 20px;
+	opacity: 0;
+	-webkit-transition: opacity 1s,  color 1s;  
+    -moz-transition: opacity 1s,  color 1s;  
+    -o-transition: opacity 1s,  color 1s;  
+    transition: opacity 1s,  color 1s;
+}
+
+.error-text, .error-text a, .error-text a:link, .error-text a:hover, .error-text a:visited {
+	color: #fc1d00;
+	opacity: 1;
+}
+
+.success-text, .success-text a, .success-text a:link, .success-text a:hover, .success-text a:visited {
+	color: #22de0d;
+	opacity: 1;
+}
+
+.normal-text, .normal-text a, .sunormal-text a:link, .normal-text a:hover, .normal-text a:visited {
+	color: #000000;
+	opacity: 1;
+}
+
+/* misc */
+
+
+
+
