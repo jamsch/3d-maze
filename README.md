@@ -7,7 +7,7 @@ __Make__ allows users to create mazes. __Draw__ allows users to draw on the maze
 ## Prerequisites
 
 - MySQL/MariaDB installed
-- PHP5 or PHP7 installed
+- PHP 5 or 7 installed
 - Modification of max file size upload (see: `upload_max_filesize`, `post_max_size` in PHP.ini)
 - Web server software (nginx, lighthttpd, apache) installed
 - Write access to files and folders inside the website directory for the __www-data__ user
