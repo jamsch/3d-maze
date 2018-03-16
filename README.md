@@ -1,10 +1,10 @@
-#3DMaze
+# 3DMaze
 
 A 3D, collaborative maze game that consists of three parts: __Make__, __Draw__ and __Play__.
 
 __Make__ allows users to create mazes. __Draw__ allows users to draw on the maze walls, and __Play__ allows users to enter the 3D maze and view the drawings.
 
-#Prerequisites
+## Prerequisites
 
 - MySQL/MariaDB installed
 - PHP5 or PHP7 installed
@@ -13,21 +13,21 @@ __Make__ allows users to create mazes. __Draw__ allows users to draw on the maze
 - Write access to files and folders inside the website directory for the __www-data__ user
 - Optional: pngquant installed (a lossy PNG compressor for compressing of maze textures)
 
-#Installation
+## Installation
 
 1. Run db.sql to create the database and table structure for the maze 
 2. Generate 256x256 png maze tiles in `images/maze/textures` between 0001.png to 0999.png using the python script `create_textures.py`
 4. Place a reCAPTCHA secret key under `includes/secret/recaptcha-secret-key.php`
 
 
-##Views
+## Views
 
 - `index.php` - The splash page that provides links to the `make`, `draw`, and `play` pages.
 - `make/index.php` - Allows the user to change the structure of the maze, as well as upload files that are downloaded when players recover in-game items on the `play` page.
 - `draw/index.php` - Allows the user to draw on the walls of the 3D maze on the `play` page.
 - `play/index.php` - The 3D maze.
 
-##APIs
+## APIs
 
 - `api.php` - Provides a web accessible `JSON` representation of the 2D maze data in a way that can be translated by the `play` page into the 3D maze.
 - `/api/upload.php` - Handles the backend saving of the files that represent in-game items and Finders Folder contents to the server's `uploads/` directory. Requests made to this page come from `play.php` when a player finds the Finder's Folder and is prompted to upload a file.
@@ -38,7 +38,7 @@ __Make__ allows users to create mazes. __Draw__ allows users to draw on the maze
 - `/api/download_file.php` - Requests to download a file
 - `/api/update_maze.php` - Updates the maze with the user-sent data. Verifies if the maze has no errors such as unreachable endpoints or islands.
 
-##Directories
+## Directories
 
 - `!Important/` - contains database scripts and other files needed to run the project.
 - `api/` - contains all the API logic for the project.
@@ -50,7 +50,7 @@ __Make__ allows users to create mazes. __Draw__ allows users to draw on the maze
 - `includes/` - All `PHP` includes. Contains both logic and content snippets.
 
 
-##Misc
+## Misc
 - `!Important/db.sql` - A `MySQL` file that contains the structure of the maze database.
 - `includes/secret/recaptcha-secret-key.php` - The website private key for Google's reCAPTCHA.
 - `images/maze/create_textures.py` - A python script for creating maze textures.
